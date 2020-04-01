@@ -1,0 +1,85 @@
+html {
+  background: url(images/kevin-erdvig-k7fUP9RQj3Y-unsplash-cropped.jpg) no-repeat center center fixed;
+  /* few-options-burning-man-2013-black-rock-city-nevada-by-dan-hogman.jpg */
+  /* static1.squarespace-1.jpg */
+  /* static1.squarespace.jpg */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+* {
+  text-align: justify;
+  font-family: 'Roboto', sans-serif;
+}
+
+div#text {
+  text-align: left;
+  width: 62%;
+}
+
+h1 {
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 1px 1px 0 #000;
+
+}
+
+h2 {
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 1px 1px 0 #000;
+
+}
+
+p {
+  font-size: 1em;
+  color: #ddd;
+  font-family: 'Roboto', sans-serif;
+  /*text-shadow: 1px 1px 0 #999;*/
+  margin-bottom: 0;
+}
+
+span.inv {
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  text-shadow: -1px -1px 0 #333;
+}
+
+ul {
+  margin-top: 0;
+  list-style-type: none;
+}
+
+li {
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  /*text-shadow: -1px -1px 0 #fff;*/
+}
+
+b {
+  font-family: 'Roboto Black', sans-serif;
+  font-weight: bolder;
+}
+
+a {
+  color: #ffab40;
+  text-decoration: none;
+  text-shadow: 0px 0px 0 #000;
+}
+
+a:hover {
+  color: #4dd0e1;
+  text-decoration: underline;
+  text-shadow: 0px 0px 0 #4693da;
+}
+
+#join-button {
+  color: #000;
+  background-color: #ffab40;
+  padding: 1em;
+  text-align: center;
+  width: 64%;
+  margin: auto;
+}

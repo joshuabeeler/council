@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Online Council</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+  <link href="./default.css" media="screen" rel="stylesheet" type="text/css" />
+  <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+
+  <!-- MAILCHIMP BEGIN -->
+  <link href="https://cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    /*#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}*/
+    /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+     #mc_embed_signup .button { }
+  </style>
+  <!-- MAILCHIMP END -->
+
+  <script>(function(c,a){if(!a.__SV){var b=window;try{var d,m,j,k=b.location,f=k.hash;d=function(a,b){return(m=a.match(RegExp(b+"=([^&]*)")))?m[1]:null};f&&d(f,"state")&&(j=JSON.parse(decodeURIComponent(d(f,"state"))),"mpeditor"===j.action&&(b.sessionStorage.setItem("_mpcehash",f),history.replaceState(j.desiredHash||"",c.title,k.pathname+k.search)))}catch(n){}var l,h;window.mixpanel=a;a._i=[];a.init=function(b,d,g){function c(b,i){var a=i.split(".");2==a.length&&(b=b[a[0]],i=a[1]);b[i]=function(){b.push([i].concat(Array.prototype.slice.call(arguments,
+0)))}}var e=a;"undefined"!==typeof g?e=a[g]=[]:g="mixpanel";e.people=e.people||[];e.toString=function(b){var a="mixpanel";"mixpanel"!==g&&(a+="."+g);b||(a+=" (stub)");return a};e.people.toString=function(){return e.toString(1)+".people (stub)"};l="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+for(h=0;h<l.length;h++)c(e,l[h]);var f="set set_once union unset remove delete".split(" ");e.get_group=function(){function a(c){b[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));e.push([d,call2])}}for(var b={},d=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<f.length;c++)a(f[c]);return b};a._i.push([b,d,g])};a.__SV=1.2;b=c.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
+MIXPANEL_CUSTOM_LIB_URL:"file:"===c.location.protocol&&"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js";d=c.getElementsByTagName("script")[0];d.parentNode.insertBefore(b,d)}})(document,window.mixpanel||[]);
+mixpanel.init("86d4364c9cc3662377cf4ba7e43c81f6")</script>
+
+  <script type="text/javascript">
+    var track = null;
+
+    if ("" == document.location.hostname) {
+      track = function(str) {
+        alert(str);
+      }
+    }
+    else if ("localhost" == document.location.hostname) {
+      track = function(str) {
+        alert(str);
+      }
+    }
+    else {
+      track = function(str) {
+        mixpanel.track(str);
+      }
+    }
+  </script>
+
+  <script type="text/javascript">
+    track("loaded");
+
+    function loadHandler()
+    {
+      var elements = document.getElementsByTagName("a");
+
+      for (var i = 0; i < elements.length; ++i)
+      {
+        var element = elements[i];
+        var str = element.id;
+
+        if (str == undefined || str == "")
+        {
+          continue;
+        }
+
+        element.onclick = function() { track("link " + this.id) };
+      }
+    }
+  </script>
+</head>
+<body onload="loadHandler();">
+  <div id="text">
+    <h1>Online Council</h1>
+    <h2>
+      Community gatherings for challenging times.
+    </h2>
+    <p>
+      During this time of uncertainty, distance, and isolation... we also need community and support. In an effort to provide much-needed connection and space to listen and be heard, I am facilitating online councils, and I’m inviting you to join me.
+    </p>
+    <p>
+      Council is a circle-style gathering during which a facilitator suggests prompts and participants take turns sharing their stories and witnessing the stories of others. The four intentions of council are to (1) listen from the heart, (2) speak from the heart, (3) speak spontaneously, and (4) be lean of expression. Join us in the digital circle to sit and practice these intentions together.
+    </p>
+    <!--
+    <p>
+      The next gathering will be this Thursday. We'll be using Zoom for video conferencing, and you'll need to install and set that up before the council. If you already have Zoom, <b>all you have to do is <a id="join body" href="https://zoom.us/j/448166810" target="_blank">click this link</a> at 5:20 pm Pacific time to participate</b> in the council.
+    </p>
+    -->
+    <p>
+      Please feel free to pass this invitation on to anyone who you think would benefit from joining the circle.
+    </p>
+    <p>
+      Sincerely,<br />Josh
+    </p>
+    <h2>
+      Next Event
+    </h2>
+    <p>
+      To be determined. When the next council is scheduled, a notification will be sent to the mailing list.
+    </p>
+    <p>
+      Meanwhile, Center for Council is also hosting regular online councils. <a href="https://www.centerforcouncil.org/social-connection-councils.html" target="_blank">Learn more about those here.</a>
+    </p>
+    <!--
+    <p >
+      <a id="join" href="https://zoom.us/j/448166810" target="_blank">Join the Council</a>
+    </p>
+    -->
+    <!--
+    <p>
+      <ul>
+        <li>
+          <b>Date:</b>
+          <ul>
+            <li>Thursday, March 26, 2020</li>
+          </ul>
+        </li>
+        <li>
+          <b>Time:</b>
+          <ul>
+            <li><b><i>All times are given in PACIFIC time.</i></b></li>
+            <li>5:20 pm - 5:30 pm (arrive and settle in)</li>
+            <li>5:30 pm - 7:00 pm (council)</li>
+            <li><a id="timezone" href="https://time.is/520pm_26_Mar_2020_in_Los_Angeles?Online_Council" target="_blank">Click here to find the meeting time in your time zone.</a></li>
+          </ul>
+        </li>
+        <li>
+          <b>Instructions:</b>
+          <ul>
+            <li><a id="zoom download" href="https://zoom.us/download#client_4meeting" target="_blank">Download and install Zoom</a> (it's free) if you don't have it yet.</li>
+            <li><b><a id="join info" href="https://zoom.us/j/448166810" target="_blank">Click this link</a></b> to join the council at 5:20 pm Pacific time.</li>
+            <li>Zoom Meeting ID: 448-166-810</li>
+          </ul>
+        </li>
+      </ul>
+    </p>
+    -->
+    <h2>
+      Mailing List
+    </h2>
+    <p>
+      Join the mailing list to get notified about future gatherings.
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup"><form action="https://joshuabeeler.us19.list-manage.com/subscribe/post?u=eb13aba0c14879d799cdfae88&amp;id=62653fc3fa" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate><div id="mc_embed_signup_scroll"><input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required><!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups--><div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_eb13aba0c14879d799cdfae88_62653fc3fa" tabindex="-1" value=""></div> <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div></div></form></div>
+<!--End mc_embed_signup-->
+    </p>
+    <h2>
+      About Council
+    </h2>
+    <p>
+      <i>"Council is an age-old practice that involves bringing people together in a circle to bear witness and share authentically. Participants agree to speak one-at-a-time, sharing their personal stories and experiences, rather than opinions, and listening non-judgmentally while others do the same. Sharing and listening to universal stories about love, loss, fear, triumph, challenge, hope and other experiences enables participants to recognize that, despite our many differences, we have much in common."</i>
+    </p>
+    <p>
+      You can visit <a id="cfc" href="https://www.centerforcouncil.org/what-is-council.html" target="_blank">centerforcouncil.org</a> to learn more about council.
+    </p>
+    <p>
+      Photo credit: <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@kjerdvig?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Kevin Erdvig"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Kevin Erdvig</span></a>
+    </p>
+    <p>
+      &nbsp;
+    </p>
+  </div>
+</body>
+</html>
