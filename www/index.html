@@ -25,16 +25,25 @@ mixpanel.init("86d4364c9cc3662377cf4ba7e43c81f6")</script>
   <script type="text/javascript">
     var track = null;
 
-    if ("" == document.location.hostname) {
+    // Developer mode.
+    if (document.URL.includes("dev")) {
       track = function(str) {
-        alert(str);
+        alert("dev: " + str);
       }
     }
+    // file://
+    else if ("" == document.location.hostname) {
+      track = function(str) {
+        alert("file: " + str);
+      }
+    }
+    // Local server.
     else if ("localhost" == document.location.hostname) {
       track = function(str) {
-        alert(str);
+        alert("localhost: " + str);
       }
     }
+    // Production mode.
     else {
       track = function(str) {
         mixpanel.track(str);
@@ -76,11 +85,9 @@ mixpanel.init("86d4364c9cc3662377cf4ba7e43c81f6")</script>
     <p>
       Council is a circle-style gathering during which a facilitator suggests prompts and participants take turns sharing their stories and witnessing the stories of others. The four intentions of council are to (1) listen from the heart, (2) speak from the heart, (3) speak spontaneously, and (4) be lean of expression. Join us in the digital circle to sit and practice these intentions together.
     </p>
-    <!--
     <p>
-      The next gathering will be this Thursday. We'll be using Zoom for video conferencing, and you'll need to install and set that up before the council. If you already have Zoom, <b>all you have to do is <a id="join body" href="https://zoom.us/j/448166810" target="_blank">click this link</a> at 5:20 pm Pacific time to participate</b> in the council.
+      The next gathering will be this Saturday, April 4. We'll be using Zoom for video conferencing, and you'll need to install and set that up before the council. If you already have Zoom, <b>all you have to do is <a id="join body" href="https://zoom.us/j/315659874" target="_blank">click this link</a> at 10:50 am Pacific time to participate</b> in the council.
     </p>
-    -->
     <p>
       Please feel free to pass this invitation on to anyone who you think would benefit from joining the circle.
     </p>
@@ -90,46 +97,43 @@ mixpanel.init("86d4364c9cc3662377cf4ba7e43c81f6")</script>
     <h2>
       Next Event
     </h2>
+    <!--
     <p>
       To be determined. When the next council is scheduled, a notification will be sent to the mailing list.
     </p>
-    <p>
-      Meanwhile, Center for Council is also hosting regular online councils. <a href="https://www.centerforcouncil.org/social-connection-councils.html" target="_blank">Learn more about those here.</a>
-    </p>
-    <!--
-    <p >
-      <a id="join" href="https://zoom.us/j/448166810" target="_blank">Join the Council</a>
-    </p>
     -->
     <!--
+    <p >
+      <a id="join" href="https://zoom.us/j/315659874" target="_blank">Join the Council</a>
+    </p>
+    -->
     <p>
       <ul>
         <li>
           <b>Date:</b>
           <ul>
-            <li>Thursday, March 26, 2020</li>
+            <li>Saturday, April 4, 2020</li>
           </ul>
         </li>
         <li>
           <b>Time:</b>
           <ul>
             <li><b><i>All times are given in PACIFIC time.</i></b></li>
-            <li>5:20 pm - 5:30 pm (arrive and settle in)</li>
-            <li>5:30 pm - 7:00 pm (council)</li>
-            <li><a id="timezone" href="https://time.is/520pm_26_Mar_2020_in_Los_Angeles?Online_Council" target="_blank">Click here to find the meeting time in your time zone.</a></li>
+            <li>10:50 am - 11:30 am (arrive and settle in)</li>
+            <li>11:00 am - 12:30 pm (council)</li>
+            <li><a id="timezone" href="https://time.is/1050AM_4_Apr_2020_in_Los_Angeles?Online_Council" target="_blank">Click here to find the meeting time in your time zone.</a></li>
           </ul>
         </li>
         <li>
           <b>Instructions:</b>
           <ul>
             <li><a id="zoom download" href="https://zoom.us/download#client_4meeting" target="_blank">Download and install Zoom</a> (it's free) if you don't have it yet.</li>
-            <li><b><a id="join info" href="https://zoom.us/j/448166810" target="_blank">Click this link</a></b> to join the council at 5:20 pm Pacific time.</li>
-            <li>Zoom Meeting ID: 448-166-810</li>
+            <li><b><a id="join info" href="https://zoom.us/j/315659874" target="_blank">Click this link</a></b> to join the council at 5:20 pm Pacific time.</li>
+            <li>Zoom Meeting ID: 315-659-874</li>
           </ul>
         </li>
       </ul>
     </p>
-    -->
     <h2>
       Mailing List
     </h2>
@@ -142,6 +146,9 @@ mixpanel.init("86d4364c9cc3662377cf4ba7e43c81f6")</script>
     <h2>
       About Council
     </h2>
+    <p>
+      Center for Council is also hosting regular online councils. <a href="https://www.centerforcouncil.org/social-connection-councils.html" target="_blank">Learn more about those here.</a>
+    </p>
     <p>
       <i>"Council is an age-old practice that involves bringing people together in a circle to bear witness and share authentically. Participants agree to speak one-at-a-time, sharing their personal stories and experiences, rather than opinions, and listening non-judgmentally while others do the same. Sharing and listening to universal stories about love, loss, fear, triumph, challenge, hope and other experiences enables participants to recognize that, despite our many differences, we have much in common."</i>
     </p>
