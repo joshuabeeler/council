@@ -23,7 +23,7 @@ func main() {
 
 	//router.LoadHTMLGlob("templates/*.tmpl.html")
 	//router.Static("/static", "static")
-	router.Static("/www", "www")
+	router.Static("/www", "")
 
 	//router.GET("/", func(c *gin.Context) {
 	//	//c.HTML(http.StatusOK, "index.tmpl.html", nil)
