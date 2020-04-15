@@ -2,7 +2,6 @@ package main
 
 import (
 	"log"
-	"net/http"
 	"os"
 
 	"github.com/gin-gonic/gin"
@@ -26,10 +25,10 @@ func main() {
 	//router.Static("/static", "static")
 	router.Static("/www", "www")
 
-	router.GET("/", func(c *gin.Context) {
-		//c.HTML(http.StatusOK, "index.tmpl.html", nil)
-		c.HTML(http.StatusOK, "www/index.html", nil)
-	})
+	//router.GET("/", func(c *gin.Context) {
+	//	//c.HTML(http.StatusOK, "index.tmpl.html", nil)
+	//	c.HTML(http.StatusOK, "www/index.html", nil)
+	//})
 
 	router.Run(":" + port)
 }
