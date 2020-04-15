@@ -1,1 +1,5 @@
+.env
+.docker_build/
+bin/
+
 .DS_Store
