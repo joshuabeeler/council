@@ -30,6 +30,7 @@ func main() {
 	//router.GET("/", func(c *gin.Context) {
 	//	//c.HTML(http.StatusOK, "index.tmpl.html", nil)
 	//})
+	
 
 	router.Run(":" + port)
 }
