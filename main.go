@@ -22,15 +22,12 @@ func main() {
 	// From: https://github.com/gin-gonic/gin#installation
 	router.Use(gin.Recovery())
 
-	//router.LoadHTMLGlob("templates/*.tmpl.html")
-	router.LoadHTMLGlob("templ/*.tmpl.html")
+	router.LoadHTMLGlob("templates/*.tmpl.html")
 
-	//router.Static("/static", "static")
-	router.StaticFS("/static-www", http.Dir("static-www"))
+	router.StaticFS("/static", http.Dir("static"))
 
 	router.GET("/", func(c *gin.Context) {
 		log.Print("Requested GET /")
-		//c.HTML(http.StatusOK, "index.tmpl.html", nil)
 		c.HTML(http.StatusOK, "main.tmpl.html", struct {
 			Title string
 		}{
