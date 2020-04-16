@@ -91,7 +91,7 @@ mixpanel.init("86d4364c9cc3662377cf4ba7e43c81f6")</script>
     <p>
       The next gathering will be on {{.NextDate}}.
       We'll be using Zoom for video conferencing, and you'll need to install and set that up before the council.
-      If you already have Zoom, then <a id="join body" href="{{.ZoomLink}}" target="_blank">click this link</a> at {{.OpenTimePT}} Pacific time to participate.
+      If you already have Zoom, then <a id="join body" href="{{.ZoomLink}}" target="_blank">click this link</a> at {{.OpenTime}} {{.TimeZone}} to participate.
     </p>
     <p>
       Please feel free to pass this invitation on to anyone who you think would benefit from joining the circle.
@@ -113,9 +113,9 @@ mixpanel.init("86d4364c9cc3662377cf4ba7e43c81f6")</script>
         <li>
           <b>Time:</b>
           <ul>
-            <li><b><i>All times are given in PACIFIC time.</i></b></li>
-            <li>{{.OpenTimePT}} - {{.StartTimePT}} (arrive and settle in)</li>
-            <li>{{.StartTimePT}} - {{.EndTimePT}} (council)</li>
+            <li><b><i>All times are given in {{.TimeZone}}.</i></b></li>
+            <li>{{.OpenTime}} - {{.StartTime}} (arrive and settle in)</li>
+            <li>{{.StartTime}} - {{.EndTime}} (council)</li>
             <li><a id="timezone" href="{{.TimeZoneQuery}}" target="_blank">Click here to find the meeting time in your time zone.</a></li>
           </ul>
         </li>
@@ -123,7 +123,7 @@ mixpanel.init("86d4364c9cc3662377cf4ba7e43c81f6")</script>
           <b>Instructions:</b>
           <ul>
             <li><a id="zoom download" href="https://zoom.us/download#client_4meeting" target="_blank">Download and install Zoom</a> (it's free) if you don't have it yet.</li>
-            <li><b><a id="join info" href="{{.ZoomLink}}" target="_blank">Click this link</a></b> to join the council at {{.OpenTimePT}} Pacific time.</li>
+            <li><b><a id="join info" href="{{.ZoomLink}}" target="_blank">Click this link</a></b> to join the council at {{.OpenTime}} {{.TimeZone}}.</li>
             <li>Zoom Meeting ID: {{.ZoomNumber}}</li>
           </ul>
         </li>
@@ -142,7 +142,7 @@ mixpanel.init("86d4364c9cc3662377cf4ba7e43c81f6")</script>
       About Council
     </h2>
     <p>
-      Center for Council is also hosting regular online councils. <a href="https://www.centerforcouncil.org/social-connection-councils.html" target="_blank">Learn more about those here.</a>
+      Center for Council is also hosting regular Social Connection Councils online. <a href="https://www.centerforcouncil.org/social-connection-councils.html" target="_blank">Learn more about those here.</a>
     </p>
     <p>
       <i>"Council is an age-old practice that involves bringing people together in a circle to bear witness and share authentically. Participants agree to speak one-at-a-time, sharing their personal stories and experiences, rather than opinions, and listening non-judgmentally while others do the same. Sharing and listening to universal stories about love, loss, fear, triumph, challenge, hope and other experiences enables participants to recognize that, despite our many differences, we have much in common."</i>

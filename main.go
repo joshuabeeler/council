@@ -36,12 +36,15 @@ func main() {
 		// TODO: If there isn't a scheduled event, show TBD template info.
 
 		// DATE
-		dayOfWeek := "Wednesday"
 		month := "Apr"
-		day := "4"
+		day := "22"
 		year := "2020"
 
-		nextDate := fmt.Sprintf("%s, %s %s, %s", dayOfWeek, month, day, year)
+		dayOfWeek := "Wednesday" // TODO: Should be determined by year-month-day, above.
+
+		nextDate := fmt.Sprintf(
+			"%s, %s %s, %s",
+			dayOfWeek, month, day, year)
 		
 		// OPEN TIME
 		openTime := "5:50 pm"
@@ -49,27 +52,36 @@ func main() {
 		openTimeClean = strings.Replace(openTimeClean, " ", "", -1)
 		openTimeClean = strings.ToUpper(openTimeClean)
 
-		timeZoneQuery := fmt.Sprintf("https://time.is/%s_%s_%s_%s_in_Los_Angeles?Online_Council", openTimeClean, day, month, year)
+		// TODO: Phase out this service. Come up with a better method.
+		// Maybe show PT, MT, CT, and ET in a table, w/ a link for other conversions?
+		// Maybe give folks a drop-down (or search) to convert to their time zone?
+		timeZoneQuery := fmt.Sprintf(
+			"https://time.is/%s_%s_%s_%s_in_Los_Angeles?Online_Council",
+			openTimeClean, day, month, year)
 
-		c.HTML(http.StatusOK, "index.gohtml", struct {
-			Title string				// TODO: Can probably remove.
-			NextDate string			// TODO: Be a Date type.
-			OpenTimePT string		// TODO: Be StartTimePT - 10 minutes.
-			StartTimePT string	// TODO: Be a Time type.
-			EndTimePT string		// TODO: Switch to duration. EndTimePT = StartTimePT + Duration
+		scheduledEvent := struct {
+			Title string			// TODO: Can probably remove.
+			NextDate string		// TODO: Be a Date type.
+			TimeZone string
+			OpenTime string		// TODO: Should be StartTime - 10 minutes.
+			StartTime string	// TODO: Should be a Time type.
+			EndTime string		// TODO: Switch to duration. EndTime = StartTime + Duration
 			ZoomLink string
 			ZoomNumber string
 			TimeZoneQuery string
 		}{
 			"Online Council",
 			nextDate,
-			openTime, // 8:50 pm ET
-			"6:00 pm", // 9:00 pm ET
-			"7:30 pm", // 10:30 pm ET
+			"Pacific time",
+			openTime,		// 8:50 pm ET
+			"6:00 pm",	// 9:00 pm ET
+			"7:30 pm",	// 10:30 pm ET
 			"https://zoom.us/j/93622550259?pwd=ZlpiTmRFUHA4V0tHMHB1cEFubmIwZz09",
 			"936-2255-0259",
 			timeZoneQuery,
-		})
+		}
+		
+		c.HTML(http.StatusOK, "index.gohtml", scheduledEvent)
 	})
 
 	router.Run(":" + port)
