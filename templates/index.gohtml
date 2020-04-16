@@ -102,16 +102,6 @@ mixpanel.init("86d4364c9cc3662377cf4ba7e43c81f6")</script>
     <h2>
       Next Event
     </h2>
-    <!--
-    <p>
-      To be determined. When the next council is scheduled, a notification will be sent to the mailing list.
-    </p>
-    -->
-    <!--
-    <p >
-      <a id="join" href="https://zoom.us/j/315659874" target="_blank">Join the Council</a>
-    </p>
-    -->
     <p>
       <ul>
         <li>
@@ -126,14 +116,14 @@ mixpanel.init("86d4364c9cc3662377cf4ba7e43c81f6")</script>
             <li><b><i>All times are given in PACIFIC time.</i></b></li>
             <li>{{.OpenTimePT}} - {{.StartTimePT}} (arrive and settle in)</li>
             <li>{{.StartTimePT}} - {{.EndTimePT}} (council)</li>
-            <li><a id="timezone" href="https://time.is/1050AM_4_Apr_2020_in_Los_Angeles?Online_Council" target="_blank">Click here to find the meeting time in your time zone.</a></li>
+            <li><a id="timezone" href="{{.TimeZoneQuery}}" target="_blank">Click here to find the meeting time in your time zone.</a></li>
           </ul>
         </li>
         <li>
           <b>Instructions:</b>
           <ul>
             <li><a id="zoom download" href="https://zoom.us/download#client_4meeting" target="_blank">Download and install Zoom</a> (it's free) if you don't have it yet.</li>
-            <li><b><a id="join info" href="{{.ZoomLink}}" target="_blank">Click this link</a></b> to join the council at 10:50 am Pacific time.</li>
+            <li><b><a id="join info" href="{{.ZoomLink}}" target="_blank">Click this link</a></b> to join the council at {{.OpenTimePT}} Pacific time.</li>
             <li>Zoom Meeting ID: {{.ZoomNumber}}</li>
           </ul>
         </li>
