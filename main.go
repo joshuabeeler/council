@@ -26,12 +26,12 @@ func main() {
 	router.LoadHTMLGlob("templates/main.tmpl.html")
 
 	//router.Static("/static", "static")
-	router.StaticFS("/", http.Dir("www"))
+	router.StaticFS("/static-www", http.Dir("static-www"))
 
 	router.GET("/", func(c *gin.Context) {
 		log.Print("Requested GET /")
 		//c.HTML(http.StatusOK, "index.tmpl.html", nil)
-		c.HTML(http.StatusOK, "main.tmpl.html", struct {
+		c.HTML(http.StatusOK, "templates/main.tmpl.html", struct {
 			Title string
 		}{
 			"Hello, World",
