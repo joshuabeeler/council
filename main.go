@@ -23,7 +23,7 @@ func main() {
 	router.Use(gin.Recovery())
 
 	//router.LoadHTMLGlob("templates/*.tmpl.html")
-	router.LoadHTMLGlob("templates/*.tmpl.html")
+	router.LoadHTMLGlob("templ/*.tmpl.html")
 
 	//router.Static("/static", "static")
 	router.StaticFS("/static-www", http.Dir("static-www"))
