@@ -14,8 +14,12 @@ html {
   font-family: 'Roboto', sans-serif;
 }
 
-div#text {
+body {
   text-align: center;
+}
+
+div#text {
+  display: inline-block;
   max-width: 1280px;
 }
 
