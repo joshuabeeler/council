@@ -32,39 +32,25 @@ func main() {
 	router.GET("/", func(c *gin.Context) {
 		log.Print("Requested GET /")
 
-		// TODO: Make an event struct type.
-		// TODO: If there isn't a scheduled event, show TBD template info.
+		// TODO: If there isn't a scheduled event, show to-be-determined info.
 
-		newYork, err := time.LoadLocation("America/New_York")
+		loc, err := time.LoadLocation("America/Los_Angeles")
 		if err != nil {
 			log.Print(err)
 		}
 
-		startTime := time.Date(2020, 5, 4, 21, 0, 0, 0, newYork)
+		startTime := time.Date(2020, 5, 4, 21, 0, 0, 0, loc)
 		openMinutesBefore, _ := time.ParseDuration("-10m")
 		openTime := startTime.Add(openMinutesBefore)
 		endMinutesAfter, _ := time.ParseDuration("1.5h")
 		endTime := startTime.Add(endMinutesAfter)
 
-		//dayOfWeek := "Wednesday" // TODO: Should be determined by year-month-day, above.
-
 		dateStr := startTime.Format("Monday, January 2, 2006")
 		log.Print(dateStr)
 
-		//nextDate := fmt.Sprintf(
-		//	"%s, %s %s, %s",
-		//	date.Weekday().String(), month, day, year)
-
-		// OPEN TIME
-		//openTime := "5:50 pm"
-		//openTimeClean := strings.Replace(openTime, ":", "", -1)
-		//openTimeClean = strings.Replace(openTimeClean, " ", "", -1)
-		//openTimeClean = strings.ToUpper(openTimeClean)
-		openTimeClean := openTime.Format("304PM") // TODO: Can get rid of colon?
+		openTimeClean := openTime.Format("304PM")
 
 		// TODO: Phase out this service. Come up with a better method.
-		// Maybe show PT, MT, CT, and ET in a table, w/ a link for other conversions?
-		// Maybe give folks a drop-down (or search) to convert to their time zone?
 		timeZoneQuery := fmt.Sprintf(
 			"https://time.is/%s_%d_%s_%d_in_Los_Angeles?Online_Council",
 			openTimeClean, startTime.Day(), startTime.Format("Jan"), startTime.Year())
@@ -78,12 +64,12 @@ func main() {
 			zone, offset, startTime.Location().String())
 
 		scheduledEvent := struct {
-			Title string			// TODO: Can probably remove.
-			NextDate string		// TODO: Be a Date type.
+			Title string
+			NextDate string
 			TimeZone string
-			OpenTime string		// TODO: Should be StartTime - 10 minutes.
-			StartTime string	// TODO: Should be a Time type.
-			EndTime string		// TODO: Switch to duration. EndTime = StartTime + Duration
+			OpenTime string
+			StartTime string
+			EndTime string
 			ZoomLink string
 			ZoomNumber string
 			TimeZoneQuery string

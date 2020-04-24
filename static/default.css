@@ -15,8 +15,8 @@ html {
 }
 
 div#text {
-  text-align: left;
-  width: 62%;
+  text-align: center;
+  max-width: 1280px;
 }
 
 h1 {
