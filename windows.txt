@@ -1,0 +1,8 @@
+https://devcenter.heroku.com/articles/getting-started-with-go#run-the-app-locally
+
+On Windows you will need to do two things before being able to run `heroku local`:
+
+Run `go build -o bin/go-getting-started.exe -v` instead of the command listed above.
+
+Alter Procfile so it’s contents are: `web: bin\go-getting-started.exe` instead of what is in the checkout.
+Don’t commit changes to Procfile though, otherwise your application’s web process won’t be able to start on Heroku.
