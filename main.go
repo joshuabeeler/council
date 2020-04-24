@@ -60,7 +60,7 @@ func main() {
 		//openTimeClean := strings.Replace(openTime, ":", "", -1)
 		//openTimeClean = strings.Replace(openTimeClean, " ", "", -1)
 		//openTimeClean = strings.ToUpper(openTimeClean)
-		openTimeClean := openTime.Format("3:04 PM") // TODO: Can get rid of colon?
+		openTimeClean := openTime.Format("304PM") // TODO: Can get rid of colon?
 
 		// TODO: Phase out this service. Come up with a better method.
 		// Maybe show PT, MT, CT, and ET in a table, w/ a link for other conversions?
@@ -71,7 +71,7 @@ func main() {
 
 		zone, offset := startTime.Zone()
 		zoneStr := fmt.Sprintf(
-			"%s %v %s",
+			"%s %d %s",
 			zone, offset, startTime.Location().String())
 
 		scheduledEvent := struct {
