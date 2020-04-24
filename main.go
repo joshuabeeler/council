@@ -34,12 +34,19 @@ func main() {
 
 		// TODO: If there isn't a scheduled event, show to-be-determined info.
 
-		loc, err := time.LoadLocation("America/Los_Angeles")
+		nyLoc, err := time.LoadLocation("America/New_York")
 		if err != nil {
 			log.Print(err)
 		}
 
-		startTime := time.Date(2020, 5, 4, 21, 0, 0, 0, loc)
+		laLoc, err := time.LoadLocation("America/Los_Angeles")
+		if err != nil {
+			log.Print(err)
+		}
+
+		myTime := time.Date(2020, 5, 4, 21, 0, 0, 0, nyLoc)
+
+		startTime := myTime.In(laLoc)
 		openMinutesBefore, _ := time.ParseDuration("-10m")
 		openTime := startTime.Add(openMinutesBefore)
 		endMinutesAfter, _ := time.ParseDuration("1.5h")
