@@ -7,7 +7,6 @@ import (
 	"time"
 
 	"fmt"
-	"strings"
 
 	"github.com/gin-gonic/gin"
 	_ "github.com/heroku/x/hmetrics/onload"
