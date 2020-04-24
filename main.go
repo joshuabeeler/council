@@ -36,7 +36,7 @@ func main() {
 		// TODO: If there isn't a scheduled event, show TBD template info.
 
 		newYork, err := time.LoadLocation("America/New_York")
-		if (err != nil) {
+		if err != nil {
 			log.Print(err)
 		}
 
@@ -60,14 +60,19 @@ func main() {
 		//openTimeClean := strings.Replace(openTime, ":", "", -1)
 		//openTimeClean = strings.Replace(openTimeClean, " ", "", -1)
 		//openTimeClean = strings.ToUpper(openTimeClean)
-		openTimeClean := openTime.Format("600PM")
+		openTimeClean := openTime.Format("3:04 PM") // TODO: Can get rid of colon?
 
 		// TODO: Phase out this service. Come up with a better method.
 		// Maybe show PT, MT, CT, and ET in a table, w/ a link for other conversions?
 		// Maybe give folks a drop-down (or search) to convert to their time zone?
 		timeZoneQuery := fmt.Sprintf(
-			"https://time.is/%s_%d_%v_%i_in_Los_Angeles?Online_Council",
+			"https://time.is/%s_%d_%d_%d_in_Los_Angeles?Online_Council",
 			openTimeClean, startTime.Day(), startTime.Month(), startTime.Year())
+
+		zone, offset := startTime.Zone()
+		zoneStr := fmt.Sprintf(
+			"%s %v %s",
+			zone, offset, startTime.Location().String())
 
 		scheduledEvent := struct {
 			Title string			// TODO: Can probably remove.
@@ -82,10 +87,10 @@ func main() {
 		}{
 			"Online Council",
 			dateStr,
-			"Eastern time",
-			openTime.Format("15:04 pm EDT"),		// 8:50 pm ET
-			startTime.Format("2:04 pm"),	// 9:00 pm ET
-			endTime.Format("3pm:04"),	// 10:30 pm ET
+			zoneStr,
+			openTime.Format("3:04 pm EDT"),		// 8:50 pm ET
+			startTime.Format("3:04 pm EDT"),	// 9:00 pm ET
+			endTime.Format("3:04 pm EDT"),	// 10:30 pm ET
 			"TODO",
 			"TODO",
 			timeZoneQuery,
