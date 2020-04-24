@@ -10,7 +10,7 @@ html {
 }
 
 * {
-  /*text-align: justify;*/
+  text-align: left;
   font-family: 'Roboto', sans-serif;
 }
 
