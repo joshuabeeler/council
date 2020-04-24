@@ -70,6 +70,7 @@ func main() {
 			openTimeClean, startTime.Day(), startTime.Format("Jan"), startTime.Year())
 
 		zone, offset := startTime.Zone()
+		offset /= 60 * 60
 		log.Print(zone)
 		log.Print(offset)
 		zoneStr := fmt.Sprintf(
@@ -90,9 +91,9 @@ func main() {
 			"Online Council",
 			dateStr,
 			zoneStr,
-			openTime.Format("3:04 pm EDT"),
-			startTime.Format("3:04 pm EDT"),
-			endTime.Format("3:04 pm EDT"),
+			openTime.Format("3:04 pm"),
+			startTime.Format("3:04 pm"),
+			endTime.Format("3:04 pm"),
 			"TODO",
 			"TODO",
 			timeZoneQuery,
