@@ -48,7 +48,7 @@ func main() {
 
 		//dayOfWeek := "Wednesday" // TODO: Should be determined by year-month-day, above.
 
-		dateStr := startTime.Format("Wednesday, April 22, 2020 (-0700 MST)")
+		dateStr := startTime.Format("Monday, January 2, 2006 (-0700 MST)")
 		log.Print(dateStr)
 
 		//nextDate := fmt.Sprintf(
@@ -66,7 +66,7 @@ func main() {
 		// Maybe show PT, MT, CT, and ET in a table, w/ a link for other conversions?
 		// Maybe give folks a drop-down (or search) to convert to their time zone?
 		timeZoneQuery := fmt.Sprintf(
-			"https://time.is/%s_%s_%s_%s_in_Los_Angeles?Online_Council",
+			"https://time.is/%s_%i_%i_%i_in_Los_Angeles?Online_Council",
 			openTimeClean, startTime.Day(), startTime.Month(), startTime.Year())
 
 		scheduledEvent := struct {
@@ -83,9 +83,9 @@ func main() {
 			"Online Council",
 			dateStr,
 			"Eastern time",
-			openTime.Format("6:00 pm"),		// 8:50 pm ET
-			startTime.Format("6:00 pm"),	// 9:00 pm ET
-			endTime.Format("10:30 pm ET"),	// 10:30 pm ET
+			openTime.Format("15:04"),		// 8:50 pm ET
+			startTime.Format("15:04"),	// 9:00 pm ET
+			endTime.Format("15:04"),	// 10:30 pm ET
 			"TODO",
 			"TODO",
 			timeZoneQuery,
