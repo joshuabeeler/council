@@ -10,12 +10,12 @@ html {
 }
 
 * {
-  text-align: justify;
+  /*text-align: justify;*/
   font-family: 'Roboto', sans-serif;
 }
 
 body {
-  text-align: center;
+  /*text-align: center;*/
 }
 
 div#text {
