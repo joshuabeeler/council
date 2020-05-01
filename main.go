@@ -87,7 +87,7 @@ func main() {
 			openTime.Format("3:04 pm"),
 			startTime.Format("3:04 pm"),
 			endTime.Format("3:04 pm"),
-			"TODO",
+			"https://us02web.zoom.us/j/89008469695?pwd=akEwYkpKZjdqaVdsRjVwbk1wVHBuUT09",
 			"TODO",
 			timeZoneQuery,
 		}
